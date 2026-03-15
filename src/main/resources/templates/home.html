@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular - Multi Calculadoras</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body class="home-page">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>🧮 Calcular</h1>
+            </div>
+            <div class="user-area">
+                <span class="user-greeting" th:text="'Olá, ' + ${userName} + '!'"></span>
+                <span class="user-status" th:text="${userStatus}"></span>
+                <div class="user-actions">
+                    <a th:if="${session.userName == null}" href="/login" class="btn-header">Login</a>
+                    <a th:if="${session.userName == null}" href="/register" class="btn-header">Registrar</a>
+                    <a th:if="${session.userName != null}" href="/logout" class="btn-header">Sair</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="welcome-section">
+            <h2>Bem-vindo ao Calcular!</h2>
+            <p>Escolha uma das calculadoras abaixo para começar:</p>
+        </div>
+
+        <div class="calculators-grid">
+            <!-- Card Quantos dias faltam para... -->
+            <div class="calculator-card">
+                <div class="card-icon">📅</div>
+                <h3>Quantos dias faltam para...</h3>
+                <p>Descubra quantos dias faltam para Natal, Páscoa, Carnaval ou uma data personalizada.</p>
+                <a href="/feriados" class="card-btn">Acessar</a>
+            </div>
+
+            <!-- Card Bhaskara -->
+            <div class="calculator-card">
+                <div class="card-icon">📈</div>
+                <h3>Bhaskara</h3>
+                <p>Calcule as raízes de equações de segundo grau com a fórmula de Bhaskara.</p>
+                <a href="/bhaskara" class="card-btn">Acessar</a>
+            </div>
+
+            <!-- Card Delta -->
+            <div class="calculator-card">
+                <div class="card-icon">Δ</div>
+                <h3>Delta (Δ)</h3>
+                <p>Calcule apenas o valor de Delta para equações de segundo grau.</p>
+                <a href="/delta" class="card-btn">Acessar</a> 
+            </div>
+
+            <!-- Card Regra de Três -->
+            <div class="calculator-card">
+                <div class="card-icon">🔄</div>
+                <h3>Regra de Três</h3>
+                <p>Resolva problemas de proporção com a regra de três simples.</p>
+                <a href="/regra-tres" class="card-btn">Acessar</a>
+            </div>
+
+            <!-- Card Fatorial -->
+            <div class="calculator-card">
+                <div class="card-icon">❗</div>
+                <h3>Fatorial</h3>
+                <p>Calcule o fatorial de qualquer número inteiro positivo.</p>
+                <a href="/fatorial" class="card-btn">Acessar</a>
+            </div>
+
+            <!-- Card Em Breve -->
+            <div class="calculator-card coming-soon">
+                <div class="card-icon">🔜</div>
+                <h3>Em breve</h3>
+                <p>Novas calculadoras estão sendo desenvolvidas:</p>
+                <ul class="coming-soon-list">
+                    <li>📊 Média, Mediana e Moda</li>
+                    <li>📐 Teorema de Pitágoras</li>
+                    <li>💱 Conversor de Moedas</li>
+                    <li>📏 Conversor de Unidades</li>
+                </ul>
+                <span class="coming-soon-badge">Em desenvolvimento</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>© 2026 Calcular - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/lucas-campos-23059030a" target="_blank" class="social-link">
+                    <img src="/images/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/lulluBackend" target="_blank" class="social-link">
+                    <img src="/images/github-icon.svg" alt="GitHub" class="social-icon">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    
+</body>
+</html>

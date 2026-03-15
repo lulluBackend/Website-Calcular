@@ -1,0 +1,44 @@
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container {
+    margin-top: 100px;
+    flex: 1; 
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input {
+    width: auto;
+    margin-right: 10px;
+    accent-color: white;
+}
+
+.remember-me label {
+    margin-bottom: 0;
+    font-weight: normal;
+    color: white;
+}
+
+/* Animação específica */
+.login-container .card {
+    animation: fadeInRight 0.5s ease;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

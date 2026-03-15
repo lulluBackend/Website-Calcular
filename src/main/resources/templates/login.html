@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Calcular</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body class="login-page">
+  
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" class="logo-link">🧮 Calcular</a>
+            </div>
+            <div class="user-area">
+               
+            </div>
+        </div>
+    </header>
+
+    <div class="container login-container">
+        <div class="card">
+            <h1>Bem-vindo de volta!</h1>
+            
+            <div th:if="${error}" class="error" th:text="${error}"></div>
+            
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" th:value="${email}" placeholder="Digite seu e-mail" required/>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required/>
+                </div>
+                
+               
+                
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            
+            <div class="link">
+                Não tem uma conta? <a href="/register">Registre-se aqui</a>
+            </div>
+            
+            <div class="link">
+                <a href="/">← Continuar como anônimo</a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>© 2026 Calcular - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/lucas-campos-23059030a" target="_blank" class="social-link">
+                    <img src="/images/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/lulluBackend" target="_blank" class="social-link">
+                    <img src="/images/github-icon.svg" alt="GitHub" class="social-icon">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

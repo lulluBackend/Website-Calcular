@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular - Fatorial</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculadoras.css">
+</head>
+<body class="fatorial-page">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" class="logo-link">🧮 Calcular</a>
+            </div>
+            <div class="user-area">
+                <span class="user-greeting" th:text="'Olá, ' + ${userName} + '!'"></span>
+                <a href="/" class="btn-header">Voltar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="calculadora-container">
+        <div class="calculadora-card">
+            <h1>❗ Fatorial</h1>
+            <p class="subtitulo">n! = n × (n-1) × (n-2) × ... × 1</p>
+            
+            <div th:if="${erro}" class="error-message" th:text="${erro}"></div>
+            
+            <form action="/calcular-fatorial" method="post" class="calculadora-form">
+                <div class="form-group">
+                    <label for="numero">Digite um número:</label>
+                    <input type="number" id="numero" name="numero" min="0" max="20" placeholder="Ex: 5" required>
+                </div>
+
+                <button type="submit" class="btn-calcular">Calcular</button>
+            </form>
+
+            <div th:if="${calculo}" class="resultado-card">
+                <h3>Resultado:</h3>
+                <p class="resultado-texto" th:text="${calculo}"></p>
+                <p class="resultado-destaque" th:text="'= ' + ${fatorial}"></p>
+            </div>
+
+            <div class="info-box">
+                <h4>📌 Observação:</h4>
+                <p>0! = 1 (por definição)</p>
+                <p>Limite: 20! para evitar números muito grandes</p>
+            </div>
+        </div>
+    </main>
+
+
+    
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>© 2026 Calcular - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/lucas-campos-23059030a" target="_blank" class="social-link">
+                    <img src="/images/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/lulluBackend" target="_blank" class="social-link">
+                    <img src="/images/github-icon.svg" alt="GitHub" class="social-icon">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

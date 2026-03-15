@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular - Bhaskara</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculadoras.css">
+</head>
+<body class="bhaskara-page">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" class="logo-link">🧮 Calcular</a>
+            </div>
+            <div class="user-area">
+                <span class="user-greeting" th:text="'Olá, ' + ${userName} + '!'"></span>
+                <a href="/" class="btn-header">Voltar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="calculadora-container">
+        <div class="calculadora-card">
+            <h1>📈 Fórmula de Bhaskara</h1>
+            <p class="subtitulo">ax² + bx + c = 0</p>
+            
+            <form action="/calcular-bhaskara" method="post" class="calculadora-form">
+                <div class="form-group">
+                    <label for="a">Valor de a:</label>
+                    <input type="number" step="any" id="a" name="a" placeholder="Ex: 1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="b">Valor de b:</label>
+                    <input type="number" step="any" id="b" name="b" placeholder="Ex: -5" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="c">Valor de c:</label>
+                    <input type="number" step="any" id="c" name="c" placeholder="Ex: 6" required>
+                </div>
+
+                <button type="submit" class="btn-calcular">Calcular</button>
+            </form>
+
+            <div th:if="${resultado}" class="resultado-card">
+                <h3>Resultado:</h3>
+                <p class="resultado-texto" th:text="${resultado}"></p>
+                
+                <div th:if="${x1 != null}" class="raizes">
+                    <p><strong>Δ =</strong> <span th:text="${delta}"></span></p>
+                    <p><strong>x₁ =</strong> <span th:text="${x1}"></span></p>
+                    <p><strong>x₂ =</strong> <span th:text="${x2}"></span></p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📌 Fórmulas:</h4>
+                <p>Δ = b² - 4ac</p>
+                <p>x = (-b ± √Δ) / (2a)</p>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>© 2026 Calcular - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/lucas-campos-23059030a" target="_blank" class="social-link">
+                    <img src="/images/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/lulluBackend" target="_blank" class="social-link">
+                    <img src="/images/github-icon.svg" alt="GitHub" class="social-icon">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+.home-page {
+    background: transparent;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-page .main-content {
+    margin-top: 100px;
+    padding: 20px 30px;
+    flex: 1; 
+}
+
+
+.calculators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.calculator-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.calculator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.calculator-card h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.calculator-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.card-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: white;
+}
+
+.welcome-section {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.welcome-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-section p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+
+
+/* Card Em Breve */
+.calculator-card.coming-soon {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator-card.coming-soon::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+.coming-soon-list {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.coming-soon-list li {
+    margin: 5px 0;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 1200px) {
+    .calculators-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular - Quantos dias faltam para...</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/calculadoras.css">
+</head>
+<body class="feriados-page">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" class="logo-link">🧮 Calcular</a>
+            </div>
+            <div class="user-area">
+                <span class="user-greeting" th:text="'Olá, ' + ${userName} + '!'"></span>
+                <a href="/" class="btn-header">Voltar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="calculadora-container">
+        <div class="calculadora-card">
+            <h1>📅 Quantos dias faltam para...</h1>
+            
+            <div th:if="${erro}" class="error-message" th:text="${erro}"></div>
+            <div th:if="${aviso}" class="warning-message" th:text="${aviso}"></div>
+            
+            <form action="/calcular-feriado" method="post" class="calculadora-form">
+                <div class="form-group">
+                    <label for="feriado">Escolha uma data:</label>
+                    <select id="feriado" name="feriado" required onchange="toggleDataPersonalizada()">
+                        <option value="natal">🎄 Natal (25/12)</option>
+                        <option value="anoNovo">🎉 Ano Novo (01/01)</option>
+                        <option value="pascoa">🐰 Páscoa</option>
+                        <option value="carnaval">🎭 Carnaval</option>
+                        <option value="tiradentes">🔪 Tiradentes (21/04)</option>
+                        <option value="independencia">🇧🇷 Independência (07/09)</option>
+                        <option value="aparecida">⛪ Nossa Srª Aparecida (12/10)</option>
+                        <option value="finados">💀 Finados (02/11)</option>
+                        <option value="proclamacao">📜 Proclamação da República (15/11)</option>
+                        <option value="personalizado">📆 Data personalizada</option>
+                    </select>
+                </div>
+
+                <div id="data-personalizada" style="display: none;">
+                    <div class="form-group">
+                        <label for="dia">Dia:</label>
+                        <input type="number" id="dia" name="dia" min="1" max="31" placeholder="DD">
+                    </div>
+                    <div class="form-group">
+                        <label for="mes">Mês:</label>
+                        <input type="number" id="mes" name="mes" min="1" max="12" placeholder="MM">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-calcular">Calcular</button>
+            </form>
+
+            <div th:if="${resultado}" class="resultado-card">
+                <h3>Resultado:</h3>
+                <p class="resultado-texto" th:text="${resultado}"></p>
+                <p class="resultado-data" th:if="${dataFeriado}" th:text="'Data: ' + ${dataFeriado}"></p>
+            </div>
+
+            <div class="info-box">
+                <h4>📌 Dica:</h4>
+                <p>Os feriados são calculados para o ano atual. Se a data já passou, mostramos a do próximo ano.</p>
+                <p>Use "Data personalizada" para qualquer dia do ano!</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleDataPersonalizada() {
+            var select = document.getElementById('feriado');
+            var divData = document.getElementById('data-personalizada');
+            divData.style.display = select.value === 'personalizado' ? 'block' : 'none';
+        }
+    </script>
+
+
+   
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>© 2026 Calcular - Todos os direitos reservados</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/lucas-campos-23059030a" target="_blank" class="social-link">
+                    <img src="/images/linkedin-icon.svg" alt="LinkedIn" class="social-icon">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/lulluBackend" target="_blank" class="social-link">
+                    <img src="/images/github-icon.svg" alt="GitHub" class="social-icon">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>

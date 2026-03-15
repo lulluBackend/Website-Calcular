@@ -1,0 +1,141 @@
+.calculadora-page {
+    background: transparent;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculadora-container {
+    max-width: 600px;
+    margin: 100px auto 40px;
+    padding: 20px;
+    flex: 1; 
+}
+
+
+.calculadora-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calculadora-card h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.subtitulo {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.calculadora-form {
+    margin-bottom: 30px;
+}
+
+.btn-calcular {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-calcular:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.resultado-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    border-left: 4px solid #4CAF50;
+}
+
+.resultado-card h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.resultado-texto {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.resultado-destaque {
+    color: #4CAF50;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.info-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.info-box h4 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.error-message {
+    background: rgba(244, 67, 54, 0.3);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #f44336;
+}
+
+.warning-message {
+    background: rgba(255, 152, 0, 0.3);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff9800;
+}
