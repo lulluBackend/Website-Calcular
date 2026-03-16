@@ -42,7 +42,6 @@
 - Conversor de Unidades
 
 ## **Sistema de Usuários**
-- Registre-se para uma experiência personalizada
 - Login opcional - use como anônimo se preferir
 - Seu nome aparece no cabeçalho quando logado
 
