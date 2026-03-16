@@ -45,11 +45,6 @@
 - Login opcional - use como anônimo se preferir
 - Seu nome aparece no cabeçalho quando logado
 
-## **Rádio Ao Vivo**
-- Música ambiente com live 24/7 do canal Cherry 葵
-- Controle de volume flutuante
-- Desligue quando quiser
-
 ## **Tecnologias Utilizadas**
 
 - **Backend**: Java 17, Spring Boot 4.0.3
@@ -57,10 +52,6 @@
 - **Banco de Dados**: PostgreSQL
 - **Build**: Maven
 - **Deploy**: Render.com (com Docker)
-
-## **Screenshots**
-
-*Em breve - Adicione prints do seu site aqui!*
 
 ## **Como Usar**
 
