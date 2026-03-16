@@ -139,3 +139,71 @@
     margin-bottom: 20px;
     border-left: 4px solid #ff9800;
 }
+
+/* Adicione no final do calculadoras.css */
+
+/* Loading spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-left-color: #ff6b6b;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+    color: white;
+    font-size: 16px;
+}
+
+/* Resultado container */
+#resultado-container {
+    margin-top: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.resultado-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid #4CAF50;
+}
+
+.resultado-card h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.resultado-texto {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.resultado-destaque {
+    color: #4CAF50;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
